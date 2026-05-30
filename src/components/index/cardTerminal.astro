@@ -1,0 +1,46 @@
+---
+import {Image} from "astro:assets"
+import cat1 from "../../assets/cat1.jpg"
+const dataToDisplay = [
+  {icon: "󰣇", title:"OS", text: "Portfolio v2.0 (Astro)"},
+  {icon: "", title:"Role", text: "FullStack Dev"},
+  {icon: "", title:"Location", text: "Jalisco, México"},
+  {icon: "", title:"GitHub", text: "Click to my Github", link: "https://github.com/CeriOwl"},
+  {icon: "", title:"Linkedin", text: "Click to my Linkedin", link: "https://www.linkedin.com/in/alejandrocamachoo/"},
+  {icon: "", title:"Contact me", text: "Click to my Mail", link: "alejandro.camacho.olivares@gmail.com"},
+  {icon: "󰃧", title:"Open to", text: "Remote · Full-time"},
+]
+
+const colors = [
+  "#f7768e",
+  "#a9b1d6",
+  "#73daca",
+  "#7dcfff",
+  "#1f2335",
+  ]
+---
+<div  class="flex gap-10 ">
+  <Image class="aspect-square max-w-sm rounded-md" src={cat1} alt="A simple cat" />
+  <div class="flex flex-col gap-y-4 text-xl w-full">
+    <h1 class="w-full border-b-2 border-foreground-tokyo border-dashed text-green-tokyo">alex<span class="text-foreground-tokyo">@</span>portfolio</h1>
+    <div class="flex flex-col gap-y-1">
+      {
+      dataToDisplay.map((data) => (
+      <div class="flex">
+        <p class="flex gap-3 text-blue-tokyo basis-48"><span>{data.icon}</span>{data.title}:</p>
+        {
+        data.link ? <a target="_blank" href={data.link.includes("@gmail.com") ? `mailto:${data.link}` : data.link }>{data.text}</a>
+        :
+        <p class="trim">{data.text}</p>
+        }
+      </div>
+      ))
+      }
+    </div>
+    <div class="flex w-full gap-2">
+      {
+      colors.map(color => <div style={{backgroundColor: color}} class="aspect-video rounded-md w-14 h-auto"></div>)
+      }
+    </div>
+  </div>
+</div>

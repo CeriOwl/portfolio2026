@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Hack";
+  src: url("/Hack/HackNerdFont-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --color-background: #1f2335;
+  --color-red-tokyo: #f7768e;
+  --color-foreground-tokyo: #a9b1d6;
+  --color-green-tokyo: #73daca;
+  --color-blue-tokyo: #7dcfff;
+  --font-hack: "Hack", monospace;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background: var(--color-green-tokyo);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

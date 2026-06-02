@@ -1,0 +1,17 @@
+---
+const navBar = [
+  {title: "about", href: "#"},
+  {title: "projects", href: "#"},
+  {title: "contact", href: "#"},
+]
+---
+
+<header class="bg-background text-foreground-tokyo text-sm md:text-md">
+  <nav class="max-w-3xl mx-auto px-6 py-8">
+    <ul class="flex w-full justify-between">
+      {
+      navBar.map((e) => <li><a href={e.href}>{e.title}.tsx</a></li>)
+      }
+    </ul>
+  </nav>
+</header>

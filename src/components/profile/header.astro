@@ -10,7 +10,7 @@ const navBar = [
   <nav class="max-w-3xl mx-auto px-6 py-8">
     <ul class="flex w-full justify-between">
       {
-      navBar.map((e) => <li><a href={e.href}>{e.title}.tsx</a></li>)
+        navBar.map((e) => <li><a href={e.href}>/{e.title}</a></li>)
       }
     </ul>
   </nav>

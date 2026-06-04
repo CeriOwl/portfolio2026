@@ -2,12 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import CardTerminal from "../components/index/cardTerminal.astro"
 import TerminalContinue from "../components/index/terminalContinue.astro"
+import TerminalText from "../components/terminalText.astro"
 ---
 
 <Layout>
-  <main class="bg-background grid place-items-center text-foreground-tokyo w-full h-dvh font-hack">
+  <main class="bg-background grid place-items-center text-foreground-tokyo h-full w-full font-hack p-10">
     <section class="flex flex-col gap-10 w-full max-w-4xl">
-      <CardTerminal/>
+      <TerminalText>
+        <p>run ./quickProfile.ts</p>
+      </TerminalText>
+      <!-- <CardTerminal/> -->
       <TerminalContinue/>
     </section>
   </main>

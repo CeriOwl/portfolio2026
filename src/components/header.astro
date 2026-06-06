@@ -1,0 +1,22 @@
+---
+const nav = [
+  {title: "about", href: "#"},
+  {title: "projects", href: "#"},
+  {title: "contact", href: "#"},
+]
+
+---
+<header class="z-20 bg-surface border-b-2 border-muted text-text text-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-10 py-6 w-full">
+      <a href="#top">alex.dev</a>
+      <nav>
+        <ul class="flex gap-10">
+          {
+            nav.map((item) => (
+            <li  class="text-muted hover:text-text transition-colors"><a class="w-full h-full block" href={item.href}>{item.title}</a></li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </header>

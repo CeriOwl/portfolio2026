@@ -1,22 +1,41 @@
 ---
-const nav = [
-  {title: "about", href: "#"},
-  {title: "projects", href: "#"},
-  {title: "contact", href: "#"},
+import HouseBlack from "../assets/houseBlack.png"
+import ProjectsBlack from "../assets/FolderBlack.png"
+import ExperienceBlack from "../assets/ExperienceBlack.png"
+import ToolBlack from "../assets/ToolBlack.png"
+import LogoBlack from "../assets/LogoBlack.png"
+import { Image } from "astro:assets"
+type Link =
+ {
+  title: string
+  href: string
+  icon: ImageMetadata
+}
+const links: Link[] = [
+  { title: "home", href: "#home", icon: HouseBlack },
+  { title: "projects", href: "#projects", icon: ProjectsBlack },
+  { title: "experience", href: "", icon: ExperienceBlack },
+  { title: "tools", href: "", icon: ToolBlack },
 ]
-
 ---
-<header class="z-20 bg-surface border-b-2 border-muted text-text text-lg">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-10 py-6 w-full">
-      <a href="#top">alex.dev</a>
-      <nav>
-        <ul class="flex gap-10">
-          {
-            nav.map((item) => (
-            <li  class="text-muted hover:text-text transition-colors"><a class="w-full h-full block" href={item.href}>{item.title}</a></li>
-            ))
-          }
-        </ul>
-      </nav>
+<header>
+  <div class="max-w-7xl mx-auto py-10 px-8 sticky flex justify-between items-center">
+    <div class="flex gap-2 items-center text-2xl">
+      <Image class="w-12 h-auto" src={LogoBlack} alt=""/>
     </div>
-  </header>
+    <nav>
+      <ul class="flex gap-x-8">
+        {
+          links.map(link => (
+          <li>
+            <a class="relative w-full h-auto block group" href={link.href}>
+              <Image class="w-12 h-auto relative z-10" src={link.icon} alt="Button to go home"/>
+              <span class="absolute capitalize z-0 left-1/2 -translate-1/2 opacity-0 transition-all top-0 group-hover:top-[140%] group-hover:opacity-100">{link.title}</span>
+            </a>
+          </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

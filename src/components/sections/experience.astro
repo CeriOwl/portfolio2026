@@ -1,0 +1,51 @@
+---
+type Experience = {
+  position: string
+  place?: string
+  from?: string
+  to?: string
+  description: string
+  time?: string
+}
+
+const experience: Experience[] = [
+  {
+    position: "Full Stack Developer",
+    place: "Uzu Digital",
+    from: "Sep, 2023",
+    to: "Present",
+    description: "Built landing pages for political and private sector clients, and developed a customer support platform serving multiple clients simultaneously."
+  }, 
+  {
+    position: "Freelance",
+    place: "Remote",
+    time: "1 year",
+    description: "Took on independent projects end-to-end, handling everything from client communication to delivery.",
+  },
+  {
+    position: "University",
+    time: "4 years",
+    place: "Universidad de Guadalajara",
+    description: "Software Engineering"
+  }
+]
+---
+<section>
+  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+    <h2 class="text-4xl uppercase font-black">experience</h2>
+    <div class="flex flex-col">
+      {
+      experience.map((exp, index, array) => (
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl">{exp.position}</h3>
+          <p class="text-md">{exp.place ? `${exp.place}` : ""} {exp.time ? ` | ${exp.time}` : ""} {exp.from ? ` | ${exp.from} - ${exp.to}` : ""}</p>
+          <p class="text-sm text-white/80">{exp.description}</p>
+          {
+            index < array.length - 1 ? <div class="w-full h-1 bg-white my-6"></div> : ""
+          }
+        </div>
+      ))
+      }
+    </div>
+  </div>
+</section>

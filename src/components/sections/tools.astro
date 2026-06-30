@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets"
+
+import Ts from "../../assets/ts.png"
+import Js from "../../assets/js.png"
+import Node from "../../assets/nodejs.png"
+import Git from "../../assets/git.png"
+import Tailwind from "../../assets/tailwind.png"
+import astro from "../../assets/astro.png"
+import Linux from "../../assets/linux.png"
+import Postgres from "../../assets/postgres.png"
+import React from "../../assets/react.png"
+import NextJs from "../../assets/next.png"
+import GoogleCloud from "../../assets/google.png"
+
+const tools = [
+  {title: "typescript", img: Ts},
+  {title: "javascript", img: Js},
+  {title: "node js/express", img: Node},
+  {title: "git/github", img: Git},
+  {title: "tailwind", img: Tailwind},
+  {title: "astro", img: astro},
+  {title: "linux", img: Linux},
+  {title: "postgresql", img: Postgres},
+  {title: "react", img: React},
+  {title: "next js", img: NextJs},
+  {title: "google cloud run", img: GoogleCloud},
+]
+---
+<section class="pb-20">
+  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+    <h2 class="text-4xl uppercase font-black">tools</h2>
+    <ul class="grid grid-cols-6 gap-10 w-full">
+      {
+      tools.map((tool) => (
+      <li class="flex flex-col items-center">
+        <Image class="w-44 h-auto" src={tool.img} alt=""/>
+        <p class="text-center">{tool.title}</p>
+      </li>
+      ))
+      }
+    </ul>
+  </div>
+</section>

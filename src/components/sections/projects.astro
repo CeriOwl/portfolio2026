@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets"
+import FifaFanFestival from "../../assets/fifaFanFestival.png"
+import AgriculturaRegenerativa from "../../assets/AgriculturaRegenerativa.png"
+// import AtencionAlUsuario from "../../assets/atencionAlUsuario.png"
+
+type Project = {
+  title: string
+  technologies: string[]
+  url: string
+  img: ImageMetadata
+  description: string
+}
+
+const projects: Project[] = [
+  {
+    title: "fifa fan festival monterrey",
+    technologies: ["Astro", "Tailwind", "Javascript"],
+    url: "https://mundialmasnoterno.mx/",
+    img: FifaFanFestival,
+    description: "Official landing page for the FIFA Fan Festival™ Monterrey — a free public event at Parque Fundidora hosting live concerts (Imagine Dragons, Chayanne, Enrique Iglesias), match screenings, and more across 40+ days of the World Cup 2026."
+  },
+  {
+    title: "Atencion al usuario - Uzu Digital",
+    technologies: ["Next Js", "Tailwind", "React", "Supabase", "Supabase Auth","PostgreSQL", "Python", "FastAPI"],
+    url: "https://atencion-al-usuario.uzu.digital/",
+    description: "Platform to manage custom service reports, reponses and charts for different clients.",
+    img: FifaFanFestival,
+  },
+  {
+    title: "Agricultura Regenerativa - Don Julio",
+    technologies: ["Astro", "React", "Firebase", "Tailwind", "Javascript"],
+    url: "https://atencion-al-usuario.uzu.digital/",
+    description: "Educational platform for Don Julio's regenerative agriculture division — hosting webinars, infographics, and resources on soil health, biodiversity, and climate-conscious farming practices.",
+    img: AgriculturaRegenerativa
+  },
+
+]
+---
+<section id="projects">
+  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+    <h2 class="text-4xl uppercase font-black">projects</h2>
+    <div class="grid grid-cols-3 gap-10">
+      {
+      projects.map(project => (
+      <div class="border-2 max-w-110 flex flex-col gap-y-4 border-white/30 transition-colors rounded-sm p-6">
+        <div class="relative group w-full h-auto overflow-hidden aspect-video">
+          <a href={project.url}><Image class="absolute inset-0 roundex-sm group-hover:scale-110 transition-transform" src={project.img} alt=""/> </a>
+        </div>
+          <h3 class="uppercase text-xl font-bold">{project.title}</h3>
+          <p class="text-md">{project.description}</p>
+        <div class="flex gap-4 flex-wrap text-xs">{project.technologies.map(tech => <span class="py-1 px-2 rounded-sm bg-white/70 border-2 border-white/70 text-dark">{tech}</span>)}</div>
+        </div>
+      ))
+      }
+    </div>
+  </div>
+</section>

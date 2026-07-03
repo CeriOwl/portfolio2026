@@ -5,23 +5,25 @@ import ExperienceBlack from "../assets/ExperienceBlack.png"
 import ToolBlack from "../assets/ToolBlack.png"
 import LogoBlack from "../assets/LogoBlack.png"
 import { Image } from "astro:assets"
-type Link =
- {
+type Link = {
   title: string
   href: string
   icon: ImageMetadata
 }
+
 const links: Link[] = [
   { title: "home", href: "#home", icon: HouseBlack },
   { title: "projects", href: "#projects", icon: ProjectsBlack },
-  { title: "experience", href: "", icon: ExperienceBlack },
-  { title: "tools", href: "", icon: ToolBlack },
+  { title: "experience", href: "#experience", icon: ExperienceBlack },
+  { title: "tools", href: "#tools", icon: ToolBlack },
 ]
 ---
-<header>
-  <div class="max-w-7xl mx-auto py-10 px-8 sticky flex justify-between items-center">
-    <div class="flex gap-2 items-center text-2xl">
-      <Image class="w-12 h-auto" src={LogoBlack} alt=""/>
+<header class="sticky top-0 z-40">
+  <div class="relative max-w-7xl mx-auto py-10 px-8 flex justify-between items-center">
+    <div class="flex gap-2 items-center text-md">
+      <a class="relative w-full h-auto block group" href="#top">
+        <Image class="w-10 md:w-12 h-auto" src={LogoBlack} alt=""/>
+      </a>
     </div>
     <nav>
       <ul class="flex gap-x-8">
@@ -29,7 +31,7 @@ const links: Link[] = [
           links.map(link => (
           <li>
             <a class="relative w-full h-auto block group" href={link.href}>
-              <Image class="w-12 h-auto relative z-10" src={link.icon} alt="Button to go home"/>
+              <Image class="w-10 md:w-12 h-auto relative z-10" src={link.icon} alt="Button to go home"/>
               <span class="absolute capitalize z-0 left-1/2 -translate-1/2 opacity-0 transition-all top-0 group-hover:top-[140%] group-hover:opacity-100">{link.title}</span>
             </a>
           </li>
@@ -39,3 +41,11 @@ const links: Link[] = [
     </nav>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+</script>
+

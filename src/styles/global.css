@@ -8,12 +8,20 @@
   --animate-appear: appear 500ms ease-in-out;
 
   @keyframes appear {
-  0% {
-    opacity: 0;
-    margin-top: 50px;
-  } 100% {
-    opacity: 100%;
-    margin-top: 0px;
-  }
+    0% {
+      opacity: 0;
+      margin-top: 50px;
+    } 100% {
+      opacity: 100%;
+      margin-top: 0px;
+    }
   }
 }
+
+.scrolled {
+    background: rgba(31, 31, 31, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(242, 240, 227, 0.1);
+  }
+

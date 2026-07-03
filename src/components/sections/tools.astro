@@ -27,10 +27,10 @@ const tools = [
   {title: "google cloud run", img: GoogleCloud},
 ]
 ---
-<section class="pb-20">
-  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+<section id="tools">
+  <div class="max-w-7xl px-10 py-20 mx-auto flex flex-col gap-10">
     <h2 class="text-4xl uppercase font-black">tools</h2>
-    <ul class="grid grid-cols-6 gap-10 w-full">
+    <ul class="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] lg:grid-cols-6 gap-10 w-full">
       {
       tools.map((tool) => (
       <li class="flex flex-col items-center">

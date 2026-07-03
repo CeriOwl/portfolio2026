@@ -3,13 +3,15 @@
 import { Image } from "astro:assets"
 import DuckMeme from "../../assets/DuckMeme.png"
 ---
-<section class="max-w-7xl pt-10 mx-auto flex flex-col gap-10">
+<section>
+  <div class="max-w-7xl py-20 px-10 mx-auto flex flex-col gap-10">
     <div class="flex flex-col gap-6">
-      <h1 class="font-black uppercase flex gap-6 items-center justify-center animate-appear text-8xl">FullStack <span class="text-white/70">Developer</span></h1>
-      <h2 class="text-center text-2xl">I'm Alex, I love play videogames, cats and code.</h2>
+      <h1 class="font-black uppercase flex flex-col gap-x-6 items-center justify-center animate-appear text-5xl md:text-8xl lg:text-9xl">FullStack <span class="text-white/70">Developer</span></h1>
+      <h2 class="text-center text-xl md:text-2xl">I'm Alex, I love play videogames, cats and code.</h2>
     </div>
     <div class="flex flex-col gap-6 items-center">
       <Image class="w-70 h-auto max-w-70" src={DuckMeme} alt=""/>
-      <p class="text-sm text-white/50">(A duck with a cup of coffe just to fill space because idk what else to add)</p>
+      <p class="text-sm text-center text-white/50">(A duck with a cup of coffe just to fill space because idk what else to add)</p>
     </div>
+  </div>
   </section>

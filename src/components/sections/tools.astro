@@ -24,18 +24,18 @@ const tools = [
   {title: "postgresql", img: Postgres},
   {title: "react", img: React},
   {title: "next js", img: NextJs},
-  {title: "google cloud run", img: GoogleCloud},
+  {title: "google cloud", img: GoogleCloud},
 ]
 ---
 <section id="tools">
-  <div class="max-w-7xl px-10 py-20 mx-auto flex flex-col gap-10">
+  <div class="max-w-7xl px-10 py-12 mx-auto flex flex-col gap-10">
     <h2 class="text-4xl uppercase font-black">tools</h2>
     <ul class="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] lg:grid-cols-6 gap-10 w-full">
       {
       tools.map((tool) => (
-      <li class="flex flex-col items-center">
+      <li class="flex flex-col items-center gap-2">
         <Image class="w-44 h-auto" src={tool.img} alt=""/>
-        <p class="text-center">{tool.title}</p>
+        <p class="text-center capitalize">{tool.title}</p>
       </li>
       ))
       }

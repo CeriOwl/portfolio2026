@@ -23,5 +23,5 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(242, 240, 227, 0.1);
-  }
-
+    isolation: isolate;
+}
